@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Payment App</title>
+</head>
+<body>
+    <div class="payment-options">
+        <button id="upi-button">UPI</button>
+        <button id="cards-button">Cards</button>
+        <button id="mobile-button">Mobile</button>
+    </div>
+    <div class="popup-container" id="popup">
+        <div class="close center" id="close-popup">Close</div>
+        <div class="payment-details">
+            <h1 id="payment-type">Payment Details</h1>
+            <form id="payment-form" autocomplete="off">
+                <div class="form-group" id="upi-fields">
+                    <br>
+                    <label for="upi-id">UPI ID:</label>
+                    <br>
+                    <input type="text" id="upi-id" placeholder="Enter UPI ID" required readonly>
+                    <br><br>
+                </div>
+                <div class="form-group" id="cards-fields">
+                    <br>
+                    <label for="card-number">Card Number:</label>
+                    <br>
+                    <input type="text" id="card-number" placeholder="Enter Card Number" required readonly>
+                    <br><br>
+                    <label for="expiry">Expiry:</label>
+                    <br>
+                    <input type="text" id="expiry" placeholder="MM/YY" required readonly>
+                    <br><br>
+                    <label for="cvv">CVV:</label>
+                    <br>
+                    <input type="text" id="cvv" placeholder="CVV" required readonly>
+                    <br><br>
+                    <label for="name-on-card">Name on Card:</label>
+                    <br>
+                    <input type="text" id="name-on-card" placeholder="Enter Name on Card" required readonly>
+                    <br>
+                </div>
+                <div class="form-group" id="mobile-fields">
+                    <br>
+                    <label for="mobile-number">Mobile Number:</label>
+                    <br>
+                    <input type="text" id="mobile-number" placeholder="Enter Mobile Number" required autocomplete="off">
+                    <br><br>
+                    <label for="name">Name:</label>
+                    <br>
+                    <input type="text" id="name" placeholder="Enter Name" required autocomplete="off">
+                    <br><br>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount:</label>
+                    <br>
+                    <input type="number" id="amount" placeholder="Amount" required min="0" readonly>
+                    <br>
+                </div>
+                <br><br>
+                <button type="button" id="pay-button" disabled>Pay</button>
+                <button type="button" id="clear-form" style="display: none;">Clear Form</button>
+            </form>
+        </div>
+        <div class="payment-status">
+            <div class="status-message" id="payment-status-message" class="hidden"></div>
+            <br><br>
+            <div class="processing-message hidden" id="processing-message">Processing... Please don't close or refresh until payment is processed.</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
